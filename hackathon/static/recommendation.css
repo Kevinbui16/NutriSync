@@ -1,0 +1,188 @@
+body {
+    font-family: 'Arial', sans-serif;
+    /*background-color: #f7f9fc; !* Light background for readability *!*/
+    background: linear-gradient( #fec5a1, #ebe3dc);
+    color: #333; /* Dark grey text for contrast */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Update the styles for top-left positioning */
+.company-header {
+    position: absolute;
+    top: 20px; /* Adjust top position */
+    left: 20px; /* Adjust left position */
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+#change_color{
+    color:red;
+}
+.company-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50; /* Company name color */
+}
+
+h2, h3 {
+    color: #2c3e50; /* Blue headings for a clean, modern look */
+    text-align: center;
+    font-size: 17px;
+    /*margin-top: 80px; !* Adjust margin to push down the content *!*/
+}
+
+p {
+    line-height: 1.6; /* Increase line height for better readability */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.product-container {
+    display: flex;
+    gap: 50px; /* Space between products */
+    /*justify-content: space-between; !* Ensure products are distributed evenly *!*/
+}
+
+.product-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center all items horizontally */
+    padding: 10px;
+    background-color: #f1ceb5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text and button */
+    max-width: 350px; /* Added max-width to restrict the width of the product boxes */
+    position: relative;
+    left: 350px;
+}
+
+.product-image {
+    width: 180px; /* Reduced image size */
+    height: 225px; /* Reduced image height */
+    margin-bottom: 10px; /* Reduced space between image and the following text */
+}
+
+.product-info {
+    flex: 1;
+    width: 100%; /* Ensure full width for the content */
+}
+
+.product-info h4 {
+    margin-bottom: 5px;
+}
+
+.product-info .price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-info .description {
+    text-align: left;
+    margin-bottom: 10px;
+    white-space: pre-line; /* This ensures that new lines in your description text are respected */
+}
+
+.purchase-button {
+    display: inline-block;
+    background-color: #f66f67; /* Blue button */
+    color: white;
+    padding: 8px 12px; /* Reduced padding to make the button smaller */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 80px; /* Reduced width of the button */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.purchase-button:hover {
+    background-color: grey; /* Darker blue on hover */
+}
+
+#notification {
+    display: none;
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nav-button {
+    /*background-color: none;*/
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+}
+
+#boxes {
+    border: none; /* Border width and color */
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px; /* Rounded corners */
+    background-color:#f1ceb5; /* Light background color */
+    text-align: left; /* Ensure text is aligned to the left */
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-direction: column; /* Align content in a vertical column */
+    align-items: flex-start; /* Align all items to the left */
+    width: 800px;
+    position: relative;
+    left: 310px;
+}
+
+#boxes p {
+    margin-bottom: 5px; /* Reduce space between paragraphs */
+    line-height: 1.4; /* Reduce line height for tighter spacing */
+}
+
+#change_position {
+    text-align: center; /* Ensure the heading is also aligned to the left */
+    margin-bottom: 10px; /* Add some space below the heading */
+    position: relative;
+    left:300px;
+}
+
+
+
+.nav-button:hover {
+    background-color: #e74c3c;
+}
+
+#button1 {
+    position: absolute;
+    top: 1010px;
+    left: 10px;
+
+}
+
+#button2 {
+    position: absolute;
+    top: 1010px;
+    left: 1320px;
+    width: 160px;
+}

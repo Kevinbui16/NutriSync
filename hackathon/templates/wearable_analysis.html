@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tommy's Health Analysis Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='wearable_analysis.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script>
+        // Function to show custom notification
+        function showNotification(message) {
+            var notification = document.getElementById("notification");
+            notification.innerHTML = message;
+            notification.style.display = "block";
+
+            // Hide the notification after 5 seconds
+            setTimeout(function() {
+                notification.style.display = "none";
+            }, 5000);
+        }
+
+        // Function to show hydration reminder every 30 minutes
+        function showHydrationReminder() {
+            setInterval(function() {
+                showNotification("🔔 Reminder: Don't forget to stay hydrated throughout the day!");
+            },  60 * 1000); // 30 minutes in milliseconds
+        }
+
+        // Function to show stretch reminder every 1 hour
+        function showStretchReminder() {
+            setInterval(function() {
+                showNotification("🔔 Reminder: Take a moment to stand up and stretch!");
+            }, 60 * 1000); // 1 hour in milliseconds
+        }
+
+        // Call the functions to start the reminders when the page loads
+        window.onload = function() {
+            showHydrationReminder();
+            showStretchReminder();
+        };
+    </script>
+</head>
+<body>
+    <!-- Top left company logo and name -->
+    <div class="company-header animate__animated animate__fadeInLeft">
+        <img src="https://i.ibb.co/TYBxMdf/77da23b0-b967-4ec7-9ff9-71aa7ca50288-removebg-preview.png" alt="Company Logo" class="company-logo">
+        <span class="company-name">NUTRISYNC</span>
+    </div>
+
+    <div class="container animate__animated animate__fadeInLeft">
+        <h1>Tommy's Health Analysis Report</h1>
+        <div class="image-container">
+            <img src="https://i.ibb.co/FVNvy94/health-dashboard.png" alt="Health Dashboard">
+        </div>
+       <div class="content-grid animate__animated animate__fadeInLeft">
+            <div class="content-section">
+                <h3>Sleep</h3>
+                <p >Average sleep duration: {{ health_report['sleep']['average'] }}</p>
+                <p >Recommended: {{ health_report['sleep']['recommended'] }}</p>
+                <p style="color: green;"><strong>Status: </strong>{{ health_report['sleep']['status'] }}</p>
+            </div>
+            <div class="content-section animate__animated animate__fadeInLeft">
+                <h3>Nutrition</h3>
+                <p>Average Vitamin C intake: {{ health_report['nutrition']['vitamin_c'] }}</p>
+                <p>Recommended: {{ health_report['nutrition']['recommended_vitamin_c'] }}</p>
+                <p style="color: red;"><strong>Status:</strong> {{ health_report['nutrition']['vitamin_c_status'] }}</p>
+            </div>
+        </div>
+
+            <div id="change_position" class="content-section animate__animated animate__fadeInLeft">
+                <h3>Recommendations</h3>
+                <ul>
+                    {% for recommendation in health_report['recommendations'] %}
+                        <li>{{ recommendation }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="color: red;">Setting up your personalized health reminders...</h3>
+        <p>Reminders set! You'll receive notifications to help you stay on track with your health goals.</p>
+
+        <!-- Navigation Buttons -->
+        <div class="button-group">
+            <button onclick="window.location.href='{{ url_for('hello_user_page') }}'" id="button1" class="nav-button">Back to User Page</button>
+            <button onclick="window.location.href='{{ url_for('main_page') }}'" id="button2" class="nav-button">Back to Main Page</button>
+        </div>
+
+
+    <!-- Notification Area -->
+    <div id="notification"></div>
+</body>
+</html>

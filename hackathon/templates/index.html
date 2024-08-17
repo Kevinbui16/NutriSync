@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body >
+    <header>
+        <div class="logo animate__animated animate__fadeInLeft">
+            <img src='https://i.ibb.co/TYBxMdf/77da23b0-b967-4ec7-9ff9-71aa7ca50288-removebg-preview.png' alt="Logo" width="50px" height="">
+            <span>NUTRISYNC</span>
+        </div>
+        <div class="nav-buttons animate__animated animate__fadeInLeft">
+            <a href="{{ url_for('login') }}" class="button">Login</a>
+            <a href="{{ url_for('register') }}" class="button">Register</a>
+        </div>
+    </header>
+
+   <div class="hero animate__animated animate__fadeInLeft">
+<!--        <h1>Embrace Health</h1>-->
+        <a href="{{ url_for('login') }}" class="hero-button animate__animated animate__heartBeat animate__infinite">GET STARTED</a>
+   </div>
+
+
+
+</body>
+</html>

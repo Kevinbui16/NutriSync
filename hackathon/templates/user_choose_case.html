@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello {{ name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='user_choose_case.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+
+    <!-- Header with logo and company name -->
+    <header class="header">
+        <div class="logo-container animate__animated animate__fadeInDown">
+            <img src="https://i.ibb.co/TYBxMdf/77da23b0-b967-4ec7-9ff9-71aa7ca50288-removebg-preview.png" alt="Company Logo" class="logo">
+            <span class="company-name">NUTRISYNC</span>
+        </div>
+    </header>
+
+    <h2 class="welcome  animate__animated animate__fadeInDown">Hello {{ name }}</h2>
+
+    <!-- Message container where the text will be typed out -->
+    <div class="message-box " id="message-container">
+        <strong><pre id="typing-text"></pre></strong>
+    </div>
+
+    <form action="#" method="POST" class="button-group">
+        <button type="submit" name="choice" value="1" class="choice-button  animate__animated animate__fadeInDown">Enter symptoms manually</button>
+        <button type="submit" name="choice" value="2" class="choice-button  animate__animated animate__fadeInDown">Analyze your wearable data</button>
+    </form>
+
+    <!-- JavaScript to create the typing effect, remove border, and center the text -->
+    <script>
+        const message = `{{ message | safe }}`;
+        const typingText = document.getElementById('typing-text');
+        const messageContainer = document.getElementById('message-container');
+        let index = 0;
+
+        function type() {
+            if (index < message.length) {
+                typingText.textContent += message.charAt(index);
+                index++;
+                setTimeout(type, 13); // Adjust speed here
+            } else {
+                // Remove the blue border and center the text after typing is complete
+                setTimeout(() => {
+                    messageContainer.style.borderLeft = 'none';
+                    typingText.style.textAlign = 'center'; // Center the text
+                }, 500); // Adjust delay to remove the border and center the text
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            type();
+        });
+    </script>
+</body>
+</html>

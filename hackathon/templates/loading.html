@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='loading.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script>
+        // Redirect to the next page after 3 seconds
+        setTimeout(function(){
+            window.location.href = "{{ url_for(next_page) }}";
+        }, 3000);
+    </script>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="spinner"></div>
+        <h2>We help you get connected...</h2>
+        <p>Hang tight while we convince the server to stop taking a coffee break!</p>
+    </div>
+</body>
+</html>

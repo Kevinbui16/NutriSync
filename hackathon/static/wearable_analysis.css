@@ -1,0 +1,149 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient( #fec5a1, #ebe3dc);
+
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.company-header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.container {
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ec2f2f;
+    margin-bottom: 30px;
+}
+
+.image-container {
+    margin-bottom: 30px;
+}
+
+.image-container img {
+    max-width: 80%; /* Make sure the image isn't too wide */
+    height: auto;
+    border-radius: 10px;
+}
+
+.content-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adjust the gap to bring the boxes closer together */
+    margin-bottom: 40px;
+    max-width: 1000px; /* Set a maximum width for the entire grid to match the visualization width */
+    width: 100%; /* Make sure the grid takes up the full width of the container */
+    margin: 0 auto; /* Center the grid within its container */
+}
+
+.content-section {
+    background-color: #f1f1f1; /* Light gray background matching the image */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+    border: 2px solid #ebe3dc; /* Border matching the gradient's lighter shade */
+    width: 48%; /* Adjust width so that two boxes fit within the total width with the gap */
+    max-width: 48%; /* Ensure the boxes don't exceed the grid width */
+}
+#change_position{
+    position: relative;
+    left:370px;
+    top:20px;
+    /*padding:40px;*/
+}
+
+
+.content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+
+
+h2, h3 {
+    color: #093642; /* Blue headings for a clean, modern look */
+    margin-bottom: 15px;
+}
+
+
+p, ul {
+    line-height: 1.6; /* Increase line height for better readability */
+}
+
+ul {
+    text-align: left;
+    list-style-position: inside;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.nav-button {
+    /*background-color: none;*/
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #e74c3c;
+}
+
+#button1{
+    position: absolute;
+    top:1350px;
+    left:10px;
+}
+
+#button2{
+    position: absolute;
+    top:1350px;
+    left:1350px;
+}
+
+#notification {
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}

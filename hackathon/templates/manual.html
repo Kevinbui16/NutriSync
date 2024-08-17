@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Symptom Entry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='manual.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <!-- Top left company logo and name -->
+    <div class="company-header animate__animated animate__fadeInDown">
+        <img src="https://i.ibb.co/TYBxMdf/77da23b0-b967-4ec7-9ff9-71aa7ca50288-removebg-preview.png" alt="Company Logo" class="company-logo">
+        <span class="company-name">NUTRISYNC</span>
+    </div>
+
+    <h2 class="animate__animated animate__fadeInDown">Manual Symptom Entry</h2>
+    <form action="{{ url_for('manual_symptom_entry') }}" method="POST">
+        <label for="symptoms" class="animate__animated animate__fadeInDown">Available symptoms</label><br><br>
+
+        <div class="buttons-container animate__animated animate__fadeInDown">
+            {% for symptom in symptoms %}
+                <button type="button" class="button-card symptom-button" value="{{ symptom }}" onclick="selectSymptom(this)">
+                    <img src="https://i.ibb.co/TYBxMdf/77da23b0-b967-4ec7-9ff9-71aa7ca50288-removebg-preview.png" alt="Symptom Logo" class="button-logo">
+                    <strong><p>{{ symptom }}</p></strong>
+                </button>
+            {% endfor %}
+        </div>
+
+        <!-- Hidden input to store the selected symptom -->
+        <input type="hidden" id="selected-symptom" name="symptoms" required>
+
+        <br><br>
+        <label for="age" class="animate__animated animate__fadeInDown">Enter your age</label><br>
+        <input class="animate__animated animate__fadeInDown" type="number" id="age" name="age" required><br><br>
+
+        <label class="animate__animated animate__fadeInDown" for="gender">Enter your gender</label><br>
+        <select class="animate__animated animate__fadeInDown" id="gender" name="gender" onchange="checkGender()">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+
+        <div id="pregnancy-field" style="display:none;">
+            <label for="pregnant">Are you pregnant?</label><br>
+            <select id="pregnant" name="pregnant">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select><br><br>
+        </div>
+
+        <input class="animate__animated animate__fadeInDown" type="submit" value="Submit">
+    </form>
+
+    <script>
+        // Show pregnancy field if gender is female
+        function checkGender() {
+            var gender = document.getElementById("gender").value;
+            var pregnancyField = document.getElementById("pregnancy-field");
+            if (gender === "female") {
+                pregnancyField.style.display = "block";
+            } else {
+                pregnancyField.style.display = "none";
+            }
+        }
+
+        // Function to select symptom button
+        function selectSymptom(button) {
+            var buttons = document.querySelectorAll('.symptom-button');
+            buttons.forEach(function(btn) {
+                btn.classList.remove('selected');
+            });
+            button.classList.add('selected');
+            document.getElementById('selected-symptom').value = button.value;
+        }
+    </script>
+</body>
+</html>

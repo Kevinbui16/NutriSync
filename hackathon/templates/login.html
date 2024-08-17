@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="login-container animate__animated animate__fadeInLeft">
+        <!-- Logo Only -->
+        <div class="logo-container animate__animated animate__fadeInLeft">
+            <img src="https://i.ibb.co/TYBxMdf/77da23b0-b967-4ec7-9ff9-71aa7ca50288-removebg-preview.png" alt="Company Logo">
+        </div>
+
+        <h2>Login</h2>
+        <form action="{{ url_for('login') }}" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="name" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Create an account</a></p>
+    </div>
+</body>
+</html>

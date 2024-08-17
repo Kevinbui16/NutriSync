@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='recommendation.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <script>
+        // Function to show custom notification
+        function showNotification(message) {
+            var notification = document.getElementById("notification");
+            notification.innerHTML = message;
+            notification.style.display = "block";
+
+            // Hide the notification after 15 seconds
+            setTimeout(function() {
+                notification.style.display = "none";
+            }, 15000);
+        }
+
+        // Function to show hydration reminder every 30 minutes
+        function showHydrationReminder() {
+            setInterval(function() {
+                showNotification("🔔 Reminder: Don't forget to stay hydrated throughout the day!");
+            }, 60 * 1000); // 30 minutes in milliseconds
+        }
+
+        // Function to show stretch reminder every 1 hour
+        function showStretchReminder() {
+            setInterval(function() {
+                showNotification("🔔 Reminder: Take a moment to stand up and stretch!");
+            }, 60 * 1000); // 1 hour in milliseconds
+        }
+
+        // Call the functions to start the reminders when the page loads
+        window.onload = function() {
+            showHydrationReminder();
+            showStretchReminder();
+        };
+    </script>
+</head>
+<body>
+    <div class="company-header animate__animated animate__fadeInDown">
+        <img src="https://i.ibb.co/TYBxMdf/77da23b0-b967-4ec7-9ff9-71aa7ca50288-removebg-preview.png" alt="Company Logo" class="company-logo">
+        <span class="company-name">NUTRISYNC</span>
+    </div>
+    <div class="container animate__animated animate__fadeInDown">
+        <h2>General Recommendation</h2>
+        <!-- In recommendation.html -->
+        <p>{{ recommendation.general|replace('\n', '<br>')|safe }}</p>
+
+        <h3>Top Recommended Supplements</h3>
+        <div class="product-container animate__animated animate__fadeInDown">
+            {% for product in recommendation['products'] %}
+                <div class="product-item">
+                    <div class="product-details " >
+<!--                            <img src="{{ product.image }}" alt="{{ product.name }}" class="product-image animate__animated animate__rubberBand animate__infinite" style="animation-duration: 2s;">-->
+                            <img src="{{ product.image }}" alt="{{ product.name }}" class="product-image animate__animated animate__tada animate__infinite" style="animation-duration: 1.5s;">
+                        <div class="product-info">
+                            <h4>{{ product.name }}</h4>
+                            <p class="price">Price: {{ product.price }}</p>
+                            <p class="description"><strong>Description:</strong></p>
+                            <p class="description">{{ product.why }}</p>
+                            <a href="{{ product.link }}" class="purchase-button">Purchase</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div id="boxes">
+            <h3 id="change_position">Specific Recommendations</h3>
+<!--            <p>• Remember to maintain a balanced diet alongside any supplementation.</p>-->
+            <p><strong>• Highly Recommended:</strong> GNC Magnesium 500 is an excellent match for your needs.</p>
+            <p>• Pfeiffer Calcium & Magnesium could be an alternative option to consider.</p>
+            <p>• Adult men may benefit from supplements that support heart health, muscle function, and overall vitality.</p>
+            <p>• Always consult with a healthcare professional before starting any new supplement regimen.</p>
+
+        </div>
+            <h3 id="change_color">Setting up your personalized health reminders...</h3>
+            <p>Reminders set! You'll receive notifications to help you stay on track with your health goals.</p>
+
+        <!-- Notification Area -->
+        <div id="notification"></div>
+
+        <!-- Navigation Buttons -->
+        <div class="button-group">
+            <button onclick="window.location.href='{{ url_for('hello_user_page') }}'" id="button1" class="nav-button">Back to User Page</button>
+            <button onclick="window.location.href='{{ url_for('main_page') }}'" id="button2" class="nav-button">Back to Main Page</button>
+        </div>
+    </div>
+</body>
+</html>

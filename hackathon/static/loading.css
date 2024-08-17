@@ -1,0 +1,47 @@
+/* loading_style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    /*background-color: #f0f4f8; !* Light blue background for a clean, modern look *!*/
+    background: linear-gradient( #fce9dd, #ebe3dc);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.loading-container {
+    text-align: center;
+}
+
+.spinner {
+    border: 8px solid transparent; /* Transparent borders */
+    border-top: 8px solid #ee856d; /* Primary blue color */
+    border-right: 8px dashed #9f1a38; /* Darker blue dashed line */
+    border-bottom: 8px solid #f87669; /* Lighter blue color */
+    border-left: 8px dashed #9f1a38; /* Darkest blue dashed line */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite, rotate 2s linear infinite;
+    margin: 0 auto 20px auto; /* Center the spinner with space below */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+h2 {
+    font-size: 24px;
+    color: #2c3e50; /* Dark grey-blue */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
