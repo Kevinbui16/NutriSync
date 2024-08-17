@@ -1,0 +1,105 @@
+/* style.css */
+
+body, html {
+    background-image: url('https://i.ibb.co/Z2BRw0z/snapedit-1723866336084.png');
+    /*background-size: cover;*/
+    background-position: center;
+    /*background-repeat: no-repeat;*/
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    width: 1470px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    margin-right: 0px;
+}
+
+.logo span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    text-decoration: none;
+    background-color: #dddddd; /* Semi-transparent background */
+    color: #000; /* Black text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Border for a more defined button */
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent on hover */
+    color: #333; /* Darken text on hover */
+    border-color: rgba(0, 0, 0, 0.4); /* Darker border on hover */
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 50px;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 115px;
+    width: 100px;
+    position: absolute;
+    left:150px;
+    top:150px;
+    line-height: 0.8;
+    color:white;
+}
+
+.hero-button {
+    text-decoration: none;
+    background-color: #f66f67;
+    color: #fff;
+    padding: 10px 15px;
+    position: relative;
+    top:170px;
+    left:665px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #c0392b;
+}
