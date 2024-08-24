@@ -9,7 +9,6 @@
     <p>We are thrilled to announce that our project, NutriSync, won the People's Choice Award at VicHack 2024!</p>
     <p>Learn more about our project on Devpost:</p>
     <a href="https://devpost.com/software/nutrisync" target="_blank">NutriSync on Devpost</a>
-    <br>
     <p>Here is the image of the award:</p>
     <img src="https://i.ibb.co/QjXd6Zb/vichackendhance.png" alt="People's Choice Award - VicHack 2024" style="width:100%;max-width:600px;">
 </body>
